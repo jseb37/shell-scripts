@@ -7,7 +7,7 @@ ALERT_CPU=80.0                            # CPU usage alert threshold in percent
 ALERT_MEM=80.0                            # Memory usage alert threshold in percentage
 ALERT_DISK=80.0                           # Disk usage alert threshold in percentage
 ALERT_LOG="alerts.log"                    # Log file for alerts
-ALERT_EMAIL="admin@example.com"           # Recipient email for alerts
+ALERT_EMAIL="admin@example.com"           # Recipient email for alert
 
 # === HEADER INITIALIZATION ===
 # If the log file doesn't exist, initialize it with headers
