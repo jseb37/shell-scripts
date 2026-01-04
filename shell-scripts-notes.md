@@ -564,6 +564,15 @@ done
 
 While the command in the command keeps returning 0(success) exit status, the while loop keeps looping/executing. Usually commands inside the while loop change the condition for the next iteration's check.
 
+#!/bin/bash
+
+count=1
+
+while [ "$count" -le 5 ]; do
+  echo "Count: $count"
+  count=$((count + 1))
+done
+
 #### Infinite While loops:
 
 Condition is always true, keeps looping forever (Use `CTRL-C` to exit the script - when executed in the terminal). You may need to use the `kill` command to kill the process - when run as an application outside terminal.
