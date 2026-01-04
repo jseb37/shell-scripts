@@ -37,7 +37,6 @@ Shell Scripting Short Notes &amp; Reference
     + [Shell Script CheckList:](#shell-script-checklist-)
     + [Logging:](#logging-)
       - [Log files locations are CONFIGURABLE:](#log-files-locations-are-configurable-)
-      - [Logging with `logger`:](#logging-with--logger--)
     + [`while` loops:](#-while--loops-)
       - [Infinite While loops:](#infinite-while-loops-)
       - [Reading a file LINE-BY-LINE:](#reading-a-file-line-by-line-)
@@ -554,43 +553,6 @@ Ex: if your script is using mail, you could use the 'mail' facility for logging.
 
 (Location depends on system)
 
-#### Logging with `logger`:
-
-`logger` is a command line utility - used for logging 'syslog' messages. By default, it creates `user.notice` messages.
-
-1. Basic logging message: `logger "Message"`
-
-Example output: 'Aug 2 01:02:44 linuxsvr: Message'.
-
-2. Logging message with facility and severity: Syntax: `logger -p facility.severity "Message"` 
-
-Ex: `logger -p local0.info "Message"`
-
-3. Tagging the log message: Use the `-t` option followed by tagName
-
-Usually you want to use the script's name as tag in order to easily identify the source of the log message. `logger -t myscript -p local0.info "Message"`
-
-Example output: 'Aug 2 01:02:44 linuxsvr myscript: Message'
-
-4. Include PID(Process ID in the log message): use `-i` option: `logger -i -t myscript "Message"`
-
-Ex output: 'Aug 2 01:02:44 linuxsvr myscript[12986]: Message'
-
-5. Additionally display log message on screen (apart from already logging it to the log file): use `-s` option
-
-Ex: `logger -s -p local0.info "Message"`
-
-NOTE: Different facilities and severities could cause the system logger to route the log messages to a different locaton/log file.
-
-**NOTE:**
-
-`$RANDOM` generates a random number. Ex:
-
-`echo "$RANDOM"` => 29133
-
-Using `shift`: `shift` shifts the command line arguments to the left (The script name is deleted).
-
-The original param1 becomes $0, original param2 becomes $1, and so on ...
 
 ### `while` loops:
 
