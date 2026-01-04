@@ -54,10 +54,6 @@ Shell Scripting Short Notes &amp; Reference
     + [Manual Debugging:](#manual-debugging-)
     + [Syntax Highlighting:](#syntax-highlighting-)
       - [PS4:](#ps4-)
-    + [File Types (DOS/WINDOWS vs UNIX/LINUX):](#file-types--dos-windows-vs-unix-linux--)
-      - [Knowing what type of file: (To which shell does the script belong to?)](#knowing-what-type-of-file---to-which-shell-does-the-script-belong-to--)
-      - [Converting DOS text scripts to UNIX scripts:](#converting-dos-text-scripts-to-unix-scripts-)
-      - [Converting UNIX text scripts to DOS scripts:](#converting-unix-text-scripts-to-dos-scripts-)
 
 
 ## Introduction
@@ -165,17 +161,6 @@ Hint: It's a best practice to use the ${VARIABLE} syntax if there is text or cha
 
 If a specified variable does NOT exist, Nothing is printed in its place in the echo statement.
 
-### Storing Commands in variables:
-
-`VAR_NAME=$(command)`	
-
-(or)	
-
-```
-VAR_NAME=`command`
-```
-
-(Command enclosed with tilde sign: Older Scripts) 
 
 ### Tests:
 
@@ -1010,17 +995,6 @@ Example Output:
 - `script.sh: Bourne-Again shell script, ASCII text executable` => UNIX script,
 - `script.sh: Bourne-Again shell script, ASCII text executable, with CRLF line terminators` => DOS script,
 
-#### Converting DOS text scripts to UNIX scripts:
-
-- `dos2unix script.sh` => Removes incompatible characters(ex: DOS carriage returns) in DOS to match with UNIX text scripts. (So that we can run it on UNIX/LINUX)
-
-Confirm the removal of incompatible characters by running `file script.sh` again to see what type of shell the script runs in. (Should be one of the unix shells that you are using.)
-
-#### Converting UNIX text scripts to DOS scripts:
-
-- `unix2dos script.sh` => Does the opposite of dos2unix. (So that we can run it on DOS/WINDOWS)
-
-How does all this happen? => When editing file in one OS and operating and using it another, Copying from one OS and pasting in another (via net, etc), Copying from web browsers into the system ... many ways!]
 
 
 *************
