@@ -536,13 +536,6 @@ function function_one() {
 
 ### Logging:
 
-`Syslog` => Uses standard facilities and severities to categorize messages.
-
-- `Facilities`: `kern`, `user`, `mail`, `daemon`, `auth`, `local0`, `local7`, etc.
-- `Severities`: `emerg`, `alert`, `crit`, `err`, `warning`, `notice`, `info`, `debug`.
-
-Ex: if your script is using mail, you could use the 'mail' facility for logging.
-
 #### Log files locations are CONFIGURABLE:
 
 1. '/var/log/messages' 
