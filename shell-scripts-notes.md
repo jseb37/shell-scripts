@@ -379,25 +379,6 @@ ping -c 1 "google.com"
 RETURN_CODE=$?		=> Now, we can use the variable RETURN_CODE anywhere in the script.
 ```
 
-### Chaining Commands:
-
-- `&&` => AND => Executes commands one after the other UNTIL one of them FAILS. (in that case -> short-circuiting)
-
-(It executes commands as long as they are returning exit statuses `0`. STOPS as soons as a command does NOT return 0)
-
-Syntax: `cmd1 && cmd2 && ...`
-
-- `||` => OR => Executes commands one after the other UNTIL one of them SUCCEEDS. (in that case -> short-circuiting)
-
-(It executes commands as long as they are returning exit statuses NOT `0`. STOPS as soons as a command returns 0)
-
-Syntax: `cmd1 || cmd2 || ...`
-
-- `;` => Semicolon => Executes commands ONE AFTER ANOTHER without checking the exit statuses/return codes.
-
-(It it same as/equivalent to executing each of the commands on a separate line)
-
-Syntax: `cmd1 ; cmd2 ; ...`
 
 ### Exit Statuses of Shell scripts:
 
