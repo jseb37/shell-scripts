@@ -43,13 +43,7 @@ Shell Scripting Short Notes &amp; Reference
       - [Exiting a loop before it's normal end:](#exiting-a-loop-before-it-s-normal-end-)
       - [Skipping iteration and executing next iteration on a loop:](#skipping-iteration-and-executing-next-iteration-on-a-loop-)
     + [Arithmetic Operations:](#arithmetic-operations-)
-    + [Debugging Shell Scripts:](#debugging-shell-scripts-)
-      - [`-x` option:](#--x--option-)
-      - [Exit on Error:](#exit-on-error-)
-      - [Print Shell Input Lines (As they are being read):](#print-shell-input-lines--as-they-are-being-read--)
-    + [Manual Debugging:](#manual-debugging-)
-    + [Syntax Highlighting:](#syntax-highlighting-)
-      - [PS4:](#ps4-)
+ 
 
 
 ## Introduction
@@ -721,89 +715,6 @@ Prints input lines before (without) any substitutions and expansions are perform
 - `#!/bin/bash -vx` = Useful, because we can see trace (substituted input) lines as well as shell script lines!
 
 More Info: `help set` or `help set | less`
-
-### Manual Debugging:
-
-You can create your own debugging code. Ex: Use a sepcial variable like DEBUG. (DEBUG=true, DEBUG=false)
-
-- Boolean `true`  :   exit status 0 (success)
-- Boolean `false` :   exit status non-zero (failure)
-
-Ex 1:
-```
-#!/bin/bash
-DEBUG=true
-$DEBUG && echo "debug mode on!"
-```
-
-```
-#!/bin/bash
-DEBUG=false
-$DEBUG || echo "debug mode off!"
-```
-
-Ex 2: (When you want to echo lines in debug mode)
-```
-#!/bin/bash
-DEBUG="echo"
-$DEBUG ls
-```
-
-Prints ls output to screen since $DEBUG is nothing but 'echo'
-
-Ex 3:
-```
-#!/bin/bash
-function debug() {
-	echo "Executing $@"
-	$@
-}
-debug ls
-```
-
-### Syntax Highlighting:
-
-Syntax errors are common. Use a text editor and enable syntax highlighting to identify syntax errors. (Ex: vim, emacs) Helps us catch syntax errors.
-
-#### PS4:
-
-Controls what is displayed before a line while using the `-x` option (during debugging). Default value is '+'
-
-Bash Variables:
-- BASH_SOURCE,  (name of the script)
-- LINENO,       (line number of the script)
-- FUNCNAME 		(function name)
-- etc ... 
-
-We can explicitly set the PS4 variable.
-
-Ex:
-```
-#!/bin/bash -x
-...
-PS4='+ $BASH_SOURCE : $LINENO : ${FUNCNAME[0] : '
-...
-```
-
-Example Output: '+ ./test.sh : 3 : debug() : TEST_VAR=test'
-
-#### Knowing what type of file: (To which shell does the script belong to?)
-
-`file script.sh` 
-
-Example Output: 
-- `script.sh: Bourne-Again shell script, ASCII text executable` => UNIX script,
-- `script.sh: Bourne-Again shell script, ASCII text executable, with CRLF line terminators` => DOS script,
-
-
-
-*************
-- USE SHELL SCRIPTS TO AUTOMATE TASKS - REPETITIVE WORK
-- SHELL SCRIPTS CAN BE SHORTCUTS - DON'T HAVE TO REMEMBER EVERYTHING (LIKE EVERY COMMAND)
-- HAPPY SCRIPTING!
-*************
-
-**THE END**
 
 
 
