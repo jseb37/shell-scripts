@@ -971,22 +971,6 @@ PS4='+ $BASH_SOURCE : $LINENO : ${FUNCNAME[0] : '
 
 Example Output: '+ ./test.sh : 3 : debug() : TEST_VAR=test'
 
-### File Types (DOS/WINDOWS vs UNIX/LINUX):
-
-Control character is used to represent end of line in both DOS and Unix text files.
-
-Control Character:
-1. Unix/Linux: Line Feed
-2. DOS: Carriage return & a Line Feed (2 characters)
-
-- `cat -v script.sh` = View the file along with the carriage returns (^M)
-
-When opening Linux/Unix text files on a DOS/Windows system: We may see one long line without new lines.
-
-And, in the opposite: We may see additional characters on Unix/Linux (`^M`). => Might run into errors while executing the files.
-
-Therefore, need to remove the carriage returns in order to run the file. The shebang `#!` is very important.
-
 #### Knowing what type of file: (To which shell does the script belong to?)
 
 `file script.sh` 
