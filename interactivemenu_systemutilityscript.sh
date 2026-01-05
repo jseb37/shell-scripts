@@ -26,7 +26,8 @@ running_processes() {
 
 check_service() {
     read -p "Enter service name: " service
-    systemctl status "$service" --no-pager
+    systemctl status "$service" --no-pager  #By default, systemctl status pipes output into a pager (less),--no-pager disables paging,#Output is printed directly to stdout.
+
 }
 
 while true

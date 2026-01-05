@@ -7,7 +7,6 @@ ALERT_CPU=80.0                            # CPU usage alert threshold in percent
 ALERT_MEM=80.0                            # Memory usage alert threshold in percentage
 ALERT_DISK=80.0                           # Disk usage alert threshold in percentage
 ALERT_LOG="alerts.log"                    # Log file for alerts
-ALERT_EMAIL="admin@example.com"           # Recipient email for alert
 
 # === HEADER INITIALIZATION ===
 # If the log file doesn't exist, initialize it with headers
@@ -32,15 +31,7 @@ rotate_log() {
     fi
 }
 
-# === FUNCTION: Log alert messages and send email ===
-log_alert() {
-    local MESSAGE="$1"
-    echo "$MESSAGE" >> "$ALERT_LOG"
-    echo "[ALERT] $MESSAGE"
 
-    # Send email
-    echo "$MESSAGE" | mail -s "🚨 VM Resource Alert" "$ALERT_EMAIL"
-}
 
 # === MONITORING LOOP ===
 while true; do
@@ -61,3 +52,4 @@ while true; do
     rotate_log
     sleep 5
 done
+
