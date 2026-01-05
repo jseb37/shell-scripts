@@ -214,6 +214,11 @@ then
 	command N
 fi
 ```
+num=10
+
+if [ "$num" -gt 5 ]; then
+    echo "Number is greater than 5"
+fi
 
 ### The `if-else` Condition: (Uses Tests in its conditional)
 
@@ -225,6 +230,13 @@ else
 	commands 1 ... N
 fi
 ```
+num=3
+
+if [ "$num" -gt 5 ]; then
+    echo "Greater than 5"
+else
+    echo "Less than or equal to 5"
+fi
 
 ### The `if-elif-else` Condition: (Uses Tests in its conditional)
 
