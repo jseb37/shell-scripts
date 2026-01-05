@@ -706,16 +706,6 @@ Ex: It can be combined with the trace (-x) option.
 - `#!/bin/bash -xe`
 - `#!/bin/bash -x -e`
 
-#### Print Shell Input Lines (As they are being read):
-
-- `-v` flag. (Can also be combined with -x and -e.)
-
-Prints input lines before (without) any substitutions and expansions are performed. Therefore, All the lines of the shell script are printed as they are, and the outputs of printing commands(like echo) are also displayed.
-
-- `#!/bin/bash -vx` = Useful, because we can see trace (substituted input) lines as well as shell script lines!
-
-More Info: `help set` or `help set | less`
-
 
 
 
