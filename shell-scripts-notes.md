@@ -718,6 +718,23 @@ Ex: It can be combined with the trace (-x) option.
 - `#!/bin/bash -xe`
 - `#!/bin/bash -x -e`
 
+2. Variables, Arrays, Associative Arrays
+Variables:
+VAR=value
+echo $VAR
+
+Environment variable:
+export VAR=value
+
+Arrays:
+arr=(one two three)
+echo ${arr[0]}
+echo ${arr[@]}
+
+Associative arrays:
+declare -A map
+map[company]=Nvidia
+echo ${map[company]}
 
 
 
