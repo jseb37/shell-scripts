@@ -682,7 +682,7 @@ declare -A map
 map[company]=Nvidia
 echo ${map[company]}
 ```
-Trap
+
 
 
 
