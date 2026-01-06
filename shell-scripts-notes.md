@@ -711,6 +711,7 @@ Ex: It can be combined with the trace (-x) option.
 Variables:
 VAR=value
 echo $VAR
+'''
 
 Environment variable:
 export VAR=value
