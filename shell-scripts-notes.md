@@ -707,6 +707,7 @@ Ex: It can be combined with the trace (-x) option.
 - `#!/bin/bash -x -e`
 
 2. Variables, Arrays, Associative Arrays
+```bash
 Variables:
 VAR=value
 echo $VAR
