@@ -533,18 +533,6 @@ function function_one() {
 
 (Location depends on system)
 
-'''
-
-#!/bin/bash
-
-count=1
-
-while [ "$count" -le 5 ]; do
-  echo "Count: $count"
-  count=$((count + 1))
-done
-
-'''
 ### `while` loops:
 
 Loop control (Alternative to `for`)
