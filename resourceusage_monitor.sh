@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -euo pipefail
 # === CONFIGURATION ===
 LOG_FILE="resource_usage.log"             # Log file for resource usage
 MAX_LOG_SIZE=50                       # Rotate log file if it exceeds 100KB
@@ -43,12 +43,11 @@ rotate_log() {
         echo "--------------------------------------------------------" >> "$LOG_FILE"
     fi
 }
-
+#LOG_FILE%.log means - > Remove .log from the end of $LOG_FILE if it exists to avoid .log to come multiple times
 # stat → shows file metadata
-
 # -c → custom output format
-
 # %s → file size in bytes
+
 
 log_alert() {
     local MSG="$1"
@@ -65,7 +64,16 @@ log_alert() {
     # exit 1
 }
 
+#A file descriptor (FD) is just a number the OS uses to represent an open file or stream for a process.
+#A handle / ID that points to where input or output should go
+# FD	Name	Meaning
+# 0	STDIN	Input (keyboard, pipe)
+# 1	STDOUT	Normal output
+# 2	STDERR	Errors / alerts
+
+
 # === MONITORING LOOP ===
+
 while true; do
     TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 
