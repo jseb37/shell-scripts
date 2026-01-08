@@ -1,5 +1,6 @@
 #!/bin/bash
 set -euo pipefail
+
 show_menu() {
     echo "============================"
     echo "   System Utility Menu"
